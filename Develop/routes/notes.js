@@ -1,7 +1,7 @@
 const notes = require('express').Router();
 const dbData = require('../db/db.json');
 const uuid = require('../public/assets/js/uuid');
-const { readFromFile, writeToFile, readAndAppend } = require('../public/assets/js/fsUtils');
+const { readFromFile, readAndAppend } = require('../public/assets/js/fsUtils');
 
 notes.post('/', (req, res) => {
     const { title, text } = req.body;
