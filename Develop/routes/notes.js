@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const dbData = require('./db/db.json');
+const dbData = require('../db/db.json');
 const uuid = require('../public/assets/js/uuid');
 const { readFromFile, writeToFile, readAndAppend } = require('../public/assets/js/fsUtils');
 

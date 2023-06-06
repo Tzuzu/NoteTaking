@@ -1,19 +1,19 @@
 const express = require('express');
 const path = require('path');
+const apiRouter = require('./routes/index.js')
 const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRouter = require('./routes/index.js')
 
 // Middleware used to parse JSON and the urlencoded data
 
 app.use(express.static('public'));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
-
 app.use('/api', apiRouter)
+
+// Default Route 
 
 app.get('*', (req, res) => 
     res.sendFile(path.join(__dirname, '/public/index.html'))
