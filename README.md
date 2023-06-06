@@ -20,17 +20,9 @@
 
   The application can be used to generate notes that the user inputs  
 
-  
-
-  ## Contributions
-
-  No
-
   ## Testing
 
   The commands in order to test are node server and launch the localhost  
-  
-  No
 
   ## Questions
 
