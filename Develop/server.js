@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const apiRouter = require('./routes/index.js')
-const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -29,14 +28,6 @@ app.get('/', (req, res) =>
 
 app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
-
-// GET Route for displaying new and existing notes
-
-app.get('/api/notes', (req, res) => res.json(dbData))
-
-app.post('/api/notes', (req, res) =>
-    console.log('test')
 );
 
 // Listen

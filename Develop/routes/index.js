@@ -1,10 +1,9 @@
 const express = require('express')
-
 const notesRouter = require('./notes')
 
-const api = express();
+const app = express();
 
-api.use('/notes', notesRouter);
-api.use('/notes/:id', notesRouter);
+app.use('/notes', notesRouter);
+app.use('/notes/:id', notesRouter);
 
-module.exports = api;
+module.exports = app;
