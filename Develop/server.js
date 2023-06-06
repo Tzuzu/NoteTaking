@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const { readFromFile, readAndAppend } = require
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const dbData = require('./db/db.json');
-const apiRouter = require('./routes/index')
+const apiRouter = require('./routes/index.js')
 
 // Middleware used to parse JSON and the urlencoded data
 
@@ -15,7 +13,11 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-app.use('', apiRouter)
+app.use('/api', apiRouter)
+
+app.get('*', (req, res) => 
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+);
 
 // GET Route for homepage (index.html)
 
